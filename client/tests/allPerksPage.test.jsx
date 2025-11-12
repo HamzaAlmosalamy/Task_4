@@ -54,8 +54,8 @@ describe('AllPerks page (Directory)', () => {
       expect(screen.getByText(seededPerk.title)).toBeInTheDocument();
     });
 
-    const nameFilter = screen.getByPlaceholderText('Enter perk name...');
-    fireEvent.change(nameFilter, { target: { value: seededPerk.title } });
+    const merchantFilter = screen.getByRole('combobox');
+    fireEvent.change(merchantFilter, { target: { value: seededPerk.merchant } });
 
     await waitFor(() => {
       expect(screen.getByText(seededPerk.title)).toBeInTheDocument();
